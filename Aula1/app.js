@@ -1,5 +1,6 @@
 const m1 = require("./Modules/mod1")
-const m2 = require("./Modules/mod2")
+const {mensagem, numero} = require("./Modules/mod2")
 
 m1("Print mod1")
-m2.mensagem("Print mod2")
+mensagem("Print mod2")
+numero("123")
