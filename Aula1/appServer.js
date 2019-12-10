@@ -12,5 +12,6 @@ const server = http.createServer(requisicao)
 const resultado = function()
 {
     console.log('Servidor em funcionamento')
+    console.log('Teste')
 }
 server.listen(3000, resultado)
