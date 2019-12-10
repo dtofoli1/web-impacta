@@ -5,5 +5,5 @@ exports.mensagem = function(x)
 
 exports.numero = function(x)
 {
-    console.log("Digitou: " + x)
+    console.log('Digitou: ' + x)
 }
