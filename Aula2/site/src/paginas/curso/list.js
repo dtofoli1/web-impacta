@@ -9,8 +9,18 @@ export class ListCurso extends Component {
                 <td>{curso.codigo}</td>
                 <td>{curso.descricao}</td>
                 <td>{curso.cargaHoraria}</td>
+                <td>
+                    <button className="btn btn-success ml-3"
+                        onClick={() => this.props.consultarCurso(curso)}>
+                        <i className="fa fa-check"></i>
+                    </button>
+                    <button className="btn btn-danger"
+                        onClick={() => this.props.removerCurso(curso)}>
+                        <i className="fa fa-trash-o"></i>
+                    </button>
+                </td>
             </tr>
-        ));
+        ))
     }
 
     render() {
@@ -23,6 +33,7 @@ export class ListCurso extends Component {
                             <th>Código</th>
                             <th>Descrição</th>
                             <th>Carga Horaria</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
