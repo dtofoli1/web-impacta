@@ -2,7 +2,7 @@ const INITIAL_STATE = {
     data : '',
     nome : '',
     email : '',
-    telefone : 5511999999999,
+    telefone : '',
     assunto : ''
 }
 
