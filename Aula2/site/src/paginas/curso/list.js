@@ -26,9 +26,9 @@ export class ListCurso extends Component {
     render() {
         return (
             <div>
-                <h3>Lista de Cursos</h3>
+                <h3 align="center">Lista de Cursos</h3>
                 <table className="table table-striped">
-                    <thead>
+                    <thead align="center">
                         <tr>
                             <th>Código</th>
                             <th>Descrição</th>
@@ -36,7 +36,7 @@ export class ListCurso extends Component {
                             <th>Ações</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody align="center">
                         {this.exibirLinhas()}
                     </tbody>
                 </table>
