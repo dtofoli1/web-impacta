@@ -2,7 +2,7 @@ const INITIAL_STATE = {
     data : '',
     nome : '',
     email : '',
-    telefone : '',
+    telefone : 559999999,
     assunto : ''
 }
 
@@ -13,7 +13,7 @@ export default function(state = INITIAL_STATE, action){
         case 'ATUALIZAR_TEL' : return {...state, telefone : action.value}
         case 'ATUALIZAR_EMAIL' : return {...state, email : action.value}
         case 'ATUALIZAR_ASSUNTO' : return {...state, assunto : action.value}
-        case 'LIMPAR' : return {...state, INITIAL_STATE}
+        case 'LIMPAR' : return INITIAL_STATE
     default : return state
     }
 }

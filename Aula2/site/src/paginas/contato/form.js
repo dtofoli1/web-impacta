@@ -6,15 +6,22 @@ import { dataOnChange,
         emailOnChange,
         telOnChange,
         assuntoOnChange,
-        limpar
+        limpar,
+        adicionar
 } from '../../actions/contatoActions'
 
 
 class ContatoForm extends React.Component {
+    preAdicionar(e){
+        e.preventDefault()
+        const {data, nome, email, telefone, assunto, adicionar} = this.props
+        adicionar(data, nome, email, telefone, assunto)
+    }
+
     render() {
         return (
             <div>
-                <h3 className="border-bottom">Formulario</h3>
+                <h3 className="border-bottom">Formulário</h3>
                 <form>
                     <div className="form-group row">
                         <label htmlFor="data"
@@ -67,11 +74,14 @@ class ContatoForm extends React.Component {
                         </div>
                     </div>
                     <div className="form-group row">
-                        <button className="btn btn-primary ml-3 mb-3">
+                        <button className="btn btn-primary ml-3 mb-3"
+                        onClick={this.preAdicionar.bind(this)}>
                             Adicionar
                         </button>
                         <button className="btn btn-primary ml-3 mb-3"
-                        onClick={this.props.limpar}>
+                        onClick={(e) => {
+                            e.preventDefault()
+                            this.props.limpar()}}>
                             Limpar
                         </button>
                     </div>
@@ -81,7 +91,7 @@ class ContatoForm extends React.Component {
     }
 }
 
-const mapStateToProps = store => ({
+const mapStoreToProps = store => ({
     data: store.contato.data,
     nome: store.contato.nome,
     email: store.contato.email,
@@ -95,8 +105,9 @@ const mapActionsToProps = dispatch => bindActionCreators({
     emailOnChange,
     telOnChange,
     assuntoOnChange,
-    limpar
+    limpar,
+    adicionar
 }, dispatch)
 
-export default connect(mapStateToProps, mapActionsToProps)(ContatoForm)
+export default connect(mapStoreToProps, mapActionsToProps)(ContatoForm)
 
